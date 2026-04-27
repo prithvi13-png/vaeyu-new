@@ -21,6 +21,9 @@ const Industries = () => (
     <Helmet>
       <title>Industries — Vaeyu Innovations | Enterprise Solutions Across Sectors</title>
       <meta name="description" content="Vaeyu Innovations serves Healthcare, Retail, Manufacturing, Education, Hospitality, Professional Services, Real Estate, Startups and more." />
+      <meta property="og:title" content="Industries — Vaeyu Innovations" />
+      <meta property="og:description" content="Custom solutions for diverse industries including healthcare, retail, manufacturing, education, hospitality, and professional services." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/industries" />
     </Helmet>
 
     <section className="section-padding">

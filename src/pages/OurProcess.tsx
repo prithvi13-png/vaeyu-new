@@ -18,6 +18,9 @@ const OurProcess = () => (
     <Helmet>
       <title>Our Process — Vaeyu Innovations | How We Deliver</title>
       <meta name="description" content="Discover Vaeyu Innovations' lean, transparent delivery process. From discovery to launch in weeks — with sprint-based development and continuous collaboration." />
+      <meta property="og:title" content="Our Process — Vaeyu Innovations" />
+      <meta property="og:description" content="Transparent development process from discovery to launch with sprint-based development and continuous collaboration." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/our-process" />
     </Helmet>
 
     <section className="section-padding">

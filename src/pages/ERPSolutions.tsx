@@ -20,6 +20,21 @@ const ERPSolutions = () => (
     <Helmet>
       <title>Custom ERP Solutions — Vaeyu Innovations | Enterprise Resource Planning</title>
       <meta name="description" content="Custom ERP systems built around your business workflows. Operations, inventory, HR, finance all unified in one platform. Delivered in weeks." />
+      <meta property="og:title" content="Custom ERP Solutions — Vaeyu Innovations" />
+      <meta property="og:description" content="Custom ERP systems for operations, inventory, HR, finance. Built for your workflows." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/erp-solutions" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom ERP Solutions",
+        "provider": {
+          "@type": "Organization",
+          "name": "Vaeyu Innovations"
+        },
+        "description": "Enterprise Resource Planning systems customized for your business workflows. Unified platform for operations, inventory, HR, finance, and more.",
+        "areaServed": ["IN", "US", "GB", "AU"],
+        "serviceType": "Enterprise Resource Planning"
+      })}</script>
     </Helmet>
 
     <section className="section-padding">

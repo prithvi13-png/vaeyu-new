@@ -3,6 +3,16 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import GradientButton from "@/components/ui/GradientButton";
 import { ArrowRight, Layers, Users, Brain, Globe, Cloud, BarChart3, Headphones, Search, Palette } from "lucide-react";
 
+const ServicesMeta = () => (
+  <Helmet>
+    <title>Services — Vaeyu Innovations | Custom Software Solutions</title>
+    <meta name="description" content="Vaeyu Innovations offers ERP, CRM, AI, web development, cloud infrastructure, consulting, and more. Full-spectrum technology solutions." />
+    <meta property="og:title" content="Services — Vaeyu Innovations" />
+    <meta property="og:description" content="Custom software, ERP, CRM, AI, web & mobile development, cloud infrastructure, and consulting." />
+    <link rel="canonical" href="https://vaeyuinnovations.com/services" />
+  </Helmet>
+);
+
 const services = [
   // 🔹 EXISTING (UNCHANGED)
   { icon: <Layers className="w-6 h-6" />, title: "ERP Solutions", desc: "Custom enterprise resource planning systems built around your business workflows. Operations, inventory, HR, finance unified.", link: "/erp-solutions", primary: true },
@@ -55,6 +65,9 @@ const Services = () => (
     <Helmet>
       <title>Services — Vaeyu Innovations | ERP, CRM, AI & Enterprise Software</title>
       <meta name="description" content="Explore Vaeyu Innovations' full range of technology services including custom ERP, CRM, AI solutions, web development, cloud, consulting, and more." />
+      <meta property="og:title" content="Services — Vaeyu Innovations" />
+      <meta property="og:description" content="Custom software, ERP, CRM, AI, web & mobile development, cloud infrastructure, consulting." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/services" />
     </Helmet>
 
     <section className="section-padding">

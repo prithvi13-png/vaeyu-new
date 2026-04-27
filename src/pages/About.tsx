@@ -15,8 +15,11 @@ const values = [
 const About = () => (
   <>
     <Helmet>
-      <title>About Vaeyu Innovations — Premium Technology Partner</title>
+      <title>About Vaeyu Innovations —Technology Partner</title>
       <meta name="description" content="Vaeyu Innovations is a premium technology company specializing in custom ERP, CRM, and AI solutions. Fast delivery, enterprise quality." />
+      <meta property="og:title" content="About Vaeyu Innovations" />
+      <meta property="og:description" content="Premium technology company delivering custom ERP, CRM, and AI solutions with fast execution." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/about" />
     </Helmet>
 
     <section className="section-padding">

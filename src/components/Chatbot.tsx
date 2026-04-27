@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 import { MessageCircle, X, Send, ChevronRight } from "lucide-react";
 
 interface Message {
@@ -42,6 +43,9 @@ const Chatbot = () => {
 
   const send = (text: string) => {
     if (!text.trim()) return;
+    trackEvent("chatbot_message_sent", {
+      message_length: text.trim().length,
+    });
     setMessages((m) => [...m, { role: "user", text }]);
     setInput("");
     setTimeout(() => {
@@ -53,7 +57,13 @@ const Chatbot = () => {
     <>
       {/* Toggle */}
       <motion.button
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          const nextOpen = !open;
+          setOpen(nextOpen);
+          if (nextOpen) {
+            trackEvent("chatbot_opened");
+          }
+        }}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-brand flex items-center justify-center shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
         whileTap={{ scale: 0.95 }}
         aria-label="Chat with us"

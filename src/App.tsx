@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/layout/Layout";
 import ScrollToTop from "@/components/ScrollToTop";
+import RouteAnalytics from "@/components/RouteAnalytics";
 
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -30,6 +31,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <RouteAnalytics />
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />

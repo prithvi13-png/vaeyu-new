@@ -12,7 +12,6 @@ const footerLinks = {
     { label: "About Us", to: "/about" },
     { label: "Our Process", to: "/our-process" },
     { label: "Careers", to: "/careers" },
-    { label: "Blog", to: "/blog" },
   ],
   Resources: [
     { label: "Industries", to: "/industries" },
@@ -31,7 +30,7 @@ const Footer = () => (
             <span className="font-heading font-bold text-lg text-foreground">Vaeyu Innovations</span>
           </Link>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6">
-            Premium enterprise software, ERP, CRM, and AI solutions. Built for scale, delivered with speed.
+            Enterprise software, ERP, CRM, and AI solutions. Built for scale, delivered with speed.
           </p>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p>info@vaeyuinnovations.com</p>

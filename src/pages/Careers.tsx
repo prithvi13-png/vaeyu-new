@@ -15,6 +15,9 @@ const Careers = () => (
     <Helmet>
       <title>Careers — Vaeyu Innovations | Join Our Team</title>
       <meta name="description" content="Join Vaeyu Innovations. Work on premium ERP, CRM, and AI projects. Engineering, design, and strategy roles available." />
+      <meta property="og:title" content="Careers — Vaeyu Innovations" />
+      <meta property="og:description" content="Join our team and work on premium ERP, CRM, and AI projects. Engineering, design, and strategy roles available." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/careers" />
     </Helmet>
 
     <section className="section-padding">

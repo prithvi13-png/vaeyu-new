@@ -1,16 +1,14 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import { Link } from "react-router-dom";
 
-interface GradientButtonProps {
+interface GradientButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   to?: string;
-  onClick?: () => void;
   variant?: "primary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
-  className?: string;
 }
 
-const GradientButton = ({ children, to, onClick, variant = "primary", size = "md", className = "" }: GradientButtonProps) => {
+const GradientButton = ({ children, to, variant = "primary", size = "md", className = "", ...buttonProps }: GradientButtonProps) => {
   const sizeClasses = {
     sm: "px-5 py-2.5 text-sm",
     md: "px-7 py-3.5 text-sm",
@@ -28,7 +26,7 @@ const GradientButton = ({ children, to, onClick, variant = "primary", size = "md
   if (to) {
     return <Link to={to} className={base}>{children}</Link>;
   }
-  return <button onClick={onClick} className={base}>{children}</button>;
+  return <button className={base} {...buttonProps}>{children}</button>;
 };
 
 export default GradientButton;

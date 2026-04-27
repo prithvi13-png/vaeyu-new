@@ -1,13 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GradientButton from "@/components/ui/GradientButton";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
+import SocialProofSection from "@/components/SocialProofSection";
 import heroVisual from "../assets/hero-visual.jpg";
 import erpVisual from "../assets/erp-visual.jpg";
 import crmVisual from "../assets/crm-visual.jpg";
 import aiVisual from "../assets/ai-visual.jpg";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { ArrowRight, Zap, Shield, Clock, BarChart3, Users, Brain, Layers, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, Zap, Shield, Clock, BarChart3, Users, Brain, Layers, CheckCircle2 } from "lucide-react";
 
 const stats = [
   { value: 50, suffix: "+", label: "Projects Delivered" },
@@ -40,33 +42,55 @@ const pillars = [
   },
 ];
 
-const trustCards = [
-  { quote: "The team translated operational complexity into a clean, working platform.", context: "ERP Implementation — Manufacturing" },
-  { quote: "Speed of execution stood out without compromising delivery clarity.", context: "CRM System — Professional Services" },
-  { quote: "From concept to usable system, the process felt unusually structured and fast.", context: "AI Integration — Healthcare" },
-  { quote: "What impressed us most was how quickly they understood our business logic.", context: "Custom Platform — Retail" },
-];
-
 const Index = () => {
   const [statsRef, statsInView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
     <>
       <Helmet>
-        <title>Vaeyu Innovations — Premium ERP, CRM & AI Solutions</title>
-        <meta name="description" content="Vaeyu Innovations delivers premium custom ERP, CRM, and AI solutions for businesses. Enterprise-grade software built faster, with precision." />
-        <meta property="og:title" content="Vaeyu Innovations — Premium ERP, CRM & AI Solutions" />
-        <meta property="og:description" content="Enterprise-grade custom software, ERP, CRM, and AI solutions. Built faster, delivered with precision." />
+        <title>Vaeyu Innovations — Custom Software, ERP, CRM & AI Solutions</title>
+        <meta name="description" content="Vaeyu Innovations delivers custom software, web & mobile solutions for startups and growing businesses. ERP, CRM, and AI systems built faster." />
+        <meta property="og:title" content="Vaeyu Innovations — Custom Software & Solutions" />
+        <meta property="og:description" content="Custom software, web & mobile solutions for startups and growing businesses. ERP, CRM, and AI systems." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://vaeyuinnovations.com" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Vaeyu Innovations",
-          url: "https://vaeyuinnovations.com",
-          email: "info@vaeyuinnovations.com",
-          telephone: "+917204873132",
-          address: { "@type": "PostalAddress", streetAddress: "Pro Works, Om Chambers, 648/A, 4th Floor, Binnamangala, 1st Stage, Indiranagar", addressLocality: "Bangalore", postalCode: "560038", addressCountry: "IN" }
+          "name": "Vaeyu Innovations",
+          "url": "https://vaeyuinnovations.com",
+          "email": "info@vaeyuinnovations.com",
+          "telephone": "+917204873132",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pro Works, Om Chambers, 648/A, 4th Floor, Binnamangala, 1st Stage, Indiranagar",
+            "addressLocality": "Bangalore",
+            "postalCode": "560038",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/vaeyuinnovations",
+            "https://twitter.com/vaeyuinnovations"
+          ]
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Vaeyu Innovations",
+          "image": "https://vaeyuinnovations.com/logo.png",
+          "description": "Custom software development agency delivering ERP, CRM, and AI solutions",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pro Works, Om Chambers, 648/A, 4th Floor, Binnamangala, 1st Stage, Indiranagar",
+            "addressLocality": "Bangalore",
+            "postalCode": "560038",
+            "addressCountry": "IN"
+          },
+          "telephone": "+917204873132",
+          "email": "info@vaeyuinnovations.com",
+          "priceRange": "₹₹",
+          "areaServed": ["IN", "US", "GB", "AU"],
+          "serviceType": ["Software Development", "Web Development", "Mobile App Development", "ERP Solutions", "CRM Solutions", "AI Integration"]
         })}</script>
       </Helmet>
 
@@ -84,16 +108,15 @@ const Index = () => {
                 <span className="text-xs font-medium text-muted-foreground">2x Faster Than Traditional Agencies</span>
               </div>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight mb-6">
-                Enterprise Systems.{" "}
-                <span className="text-gradient-brand">Built Faster.</span>
+                We build digital products that{" "}
+                <span className="text-gradient-brand">grow your business</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl mb-10">
-                Custom ERP, CRM, and AI solutions engineered for your business.
-                Launch-ready systems in weeks not months.
+                Vaeyu Innovations delivers custom software, web & mobile solutions for startups and growing businesses.
               </p>
               <div className="flex flex-wrap gap-4">
-                <GradientButton to="/contact" size="lg">
-                  Get Free Consultation <ArrowRight className="w-4 h-4" />
+                <GradientButton to="#lead-capture" size="lg">
+                  Get a free strategy call <ArrowRight className="w-4 h-4" />
                 </GradientButton>
                 <GradientButton to="/services" variant="outline" size="lg">
                   Explore Solutions
@@ -134,6 +157,13 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Lead Capture */}
+      <section id="lead-capture" className="section-padding bg-gradient-to-b from-secondary/20 to-transparent">
+        <div className="container-premium">
+          <LeadCaptureForm />
+        </div>
+      </section>
+
       {/* Stats */}
       <section ref={statsRef} className="py-16 border-y border-border/30">
         <div className="container-premium grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -147,6 +177,8 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      <SocialProofSection />
 
       {/* Core Pillars */}
       <section className="section-padding">
@@ -230,32 +262,6 @@ const Index = () => {
                 </ul>
               </div>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust */}
-      <section className="section-padding">
-        <div className="container-premium">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Delivery Outcomes</p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
-              What Business Teams <span className="text-gradient-brand">Value</span>
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {trustCards.map((card, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="rounded-2xl border border-border/30 bg-card/30 p-7 hover-lift h-full">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 text-primary fill-primary" />)}
-                  </div>
-                  <p className="text-foreground text-sm leading-relaxed italic mb-4">"{card.quote}"</p>
-                  <p className="text-xs text-muted-foreground">{card.context}</p>
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>

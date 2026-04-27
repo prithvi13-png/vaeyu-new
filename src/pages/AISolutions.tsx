@@ -20,6 +20,21 @@ const AISolutions = () => (
     <Helmet>
       <title>Custom AI Solutions — Vaeyu Innovations | Business AI Tools</title>
       <meta name="description" content="Practical AI tools for business — chat assistants, workflow automation, document intelligence, smart dashboards. Built for real operations." />
+      <meta property="og:title" content="Custom AI Solutions — Vaeyu Innovations" />
+      <meta property="og:description" content="AI-powered tools for chat assistants, workflow automation, document intelligence, and smart dashboards." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/ai-solutions" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom AI Solutions",
+        "provider": {
+          "@type": "Organization",
+          "name": "Vaeyu Innovations"
+        },
+        "description": "Practical AI integration for business operations. Chat assistants, workflow automation, document intelligence, predictive analytics, and AI copilots.",
+        "areaServed": ["IN", "US", "GB", "AU"],
+        "serviceType": "Artificial Intelligence Integration"
+      })}</script>
     </Helmet>
 
     <section className="section-padding">

@@ -20,6 +20,21 @@ const CRMSolutions = () => (
     <Helmet>
       <title>Custom CRM Solutions — Vaeyu Innovations | Customer Relationship Management</title>
       <meta name="description" content="Custom CRM systems for lead management, pipeline tracking, customer lifecycle, and sales automation. Built specifically for your business model." />
+      <meta property="og:title" content="Custom CRM Solutions — Vaeyu Innovations" />
+      <meta property="og:description" content="Custom CRM systems for lead management, sales pipeline, customer lifecycle management." />
+      <link rel="canonical" href="https://vaeyuinnovations.com/crm-solutions" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom CRM Solutions",
+        "provider": {
+          "@type": "Organization",
+          "name": "Vaeyu Innovations"
+        },
+        "description": "Customer Relationship Management systems customized for your sales and customer success workflows. Lead management, pipeline tracking, automation, and analytics.",
+        "areaServed": ["IN", "US", "GB", "AU"],
+        "serviceType": "Customer Relationship Management"
+      })}</script>
     </Helmet>
 
     <section className="section-padding">
