@@ -9,7 +9,7 @@ import crmVisual from "../assets/crm-visual.jpg";
 import aiVisual from "../assets/ai-visual.jpg";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import { ArrowRight, Zap, Shield, Clock, BarChart3, Users, Brain, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Zap, Shield, Clock, BarChart3, Users, Brain, Layers, CheckCircle2, Globe, Smartphone, Code2, Headphones, Cloud } from "lucide-react";
 
 const stats = [
   { value: 50, suffix: "+", label: "Projects Delivered" },
@@ -40,6 +40,23 @@ const pillars = [
     image: aiVisual,
     link: "/ai-solutions",
   },
+];
+
+// Homepage services grid — app development leads, then the rest of the stack.
+// Web/Mobile App Development and BPO are present; all existing capabilities retained.
+const homeServices = [
+  { icon: <Globe className="w-5 h-5" />, title: "Web App Development", desc: "High-performance web apps and portals, engineered to scale." },
+  { icon: <Smartphone className="w-5 h-5" />, title: "Mobile App Development", desc: "Native and cross-platform mobile apps your users love." },
+  { icon: <Code2 className="w-5 h-5" />, title: "Custom Software", desc: "Bespoke software built around your exact workflows." },
+  { icon: <Layers className="w-5 h-5" />, title: "ERP Solutions", desc: "Unify operations, inventory, HR, and finance." },
+  { icon: <Users className="w-5 h-5" />, title: "CRM Solutions", desc: "Convert leads, track pipelines, and grow revenue." },
+  { icon: <Brain className="w-5 h-5" />, title: "AI Solutions", desc: "Practical AI for automation and decision-making." },
+  { icon: <Shield className="w-5 h-5" />, title: "QA & Testing", desc: "Process-driven QA for reliable, compliant releases." },
+  { icon: <Headphones className="w-5 h-5" />, title: "BPO Services", desc: "Scalable customer support and back-office operations." },
+  { icon: <Layers className="w-5 h-5" />, title: "Custom Dashboards", desc: "Real-time visibility into every metric that matters." },
+  { icon: <Zap className="w-5 h-5" />, title: "Business Automation", desc: "Eliminate manual processes. Automate at scale." },
+  { icon: <Cloud className="w-5 h-5" />, title: "Cloud & DevOps", desc: "Secure, scalable infrastructure for enterprise systems." },
+  { icon: <BarChart3 className="w-5 h-5" />, title: "Technical SEO", desc: "Visibility that drives qualified traffic and leads." },
 ];
 
 const Index = () => {
@@ -108,11 +125,11 @@ const Index = () => {
                 <span className="text-xs font-medium text-muted-foreground">2x Faster Than Traditional Agencies</span>
               </div>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight mb-6">
-                Custom ERP, CRM & AI software,{" "}
-                <span className="text-gradient-brand">delivered in weeks not months</span>
+                Web, mobile, and the{" "}
+                <span className="text-gradient-brand">full stack of software</span> your business needs
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl mb-10">
-                Vaeyu Innovations builds enterprise software around how your business actually works — for startups and growing businesses that need to move fast.
+                Vaeyu is an end-to-end IT partner — we build web and mobile apps, custom software, ERP & CRM systems, AI solutions, and provide QA, support, and BPO services. Fixed pricing, direct founder access, and a money-back first milestone.
               </p>
               <div className="flex flex-wrap gap-4">
                 {/* TODO: point to a Cal.com booking link once available; for now routes to /contact */}
@@ -267,24 +284,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Additional Services */}
+      {/* Services */}
       <section className="section-padding bg-gradient-to-b from-secondary/20 to-transparent">
         <div className="container-premium">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Full-Spectrum Delivery</p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
-              Beyond ERP, CRM & AI
+              Web, Mobile & the Full Stack
             </h2>
-            <p className="text-muted-foreground text-lg">Supporting capabilities that complete the enterprise technology stack.</p>
+            <p className="text-muted-foreground text-lg">From web and mobile apps to ERP, CRM, AI, QA, and BPO — everything your business needs, under one partner.</p>
           </AnimatedSection>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              { icon: <Layers className="w-5 h-5" />, title: "Custom Dashboards", desc: "Real-time visibility into every metric that matters." },
-              { icon: <Zap className="w-5 h-5" />, title: "Business Automation", desc: "Eliminate manual processes. Automate at scale." },
-              { icon: <Shield className="w-5 h-5" />, title: "Cloud & DevOps", desc: "Secure, scalable infrastructure for enterprise systems." },
-              { icon: <BarChart3 className="w-5 h-5" />, title: "Technical SEO", desc: "Visibility that drives qualified traffic and leads." },
-            ].map((s, i) => (
+            {homeServices.map((s, i) => (
               <AnimatedSection key={s.title} delay={i * 0.1}>
                 <div className="rounded-xl border border-border/30 bg-card/20 p-6 hover-lift h-full">
                   <div className="w-10 h-10 rounded-lg bg-gradient-brand-subtle flex items-center justify-center text-primary mb-4">

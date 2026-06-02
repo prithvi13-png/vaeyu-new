@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GradientButton from "@/components/ui/GradientButton";
-import { ArrowRight, Layers, Users, Brain, Globe, Cloud, BarChart3, Headphones, Search, Palette } from "lucide-react";
+import { ArrowRight, Layers, Users, Brain, Globe, Cloud, BarChart3, Headphones, Search, Palette, Smartphone, Code2 } from "lucide-react";
 
 const ServicesMeta = () => (
   <Helmet>
@@ -14,23 +14,30 @@ const ServicesMeta = () => (
 );
 
 const services = [
-  // 🔹 EXISTING (UNCHANGED)
+  // 🔹 LEAD SERVICES — app development first, then the rest of the stack.
+  // Web App Development, Mobile App Development, and Custom Software added here;
+  // ERP / CRM / AI / QA / BPO reordered up. No existing service removed.
+  { icon: <Globe className="w-6 h-6" />, title: "Web App Development", desc: "Scalable, high-performance web applications and portals. From dashboards to platforms, engineered for growth.", link: "/services", primary: true },
+  { icon: <Smartphone className="w-6 h-6" />, title: "Mobile App Development", desc: "Native and cross-platform mobile apps with polished UX, built to scale across iOS and Android.", link: "/services", primary: true },
+  { icon: <Code2 className="w-6 h-6" />, title: "Custom Software", desc: "Bespoke software engineered around your exact workflows, integrations, and business goals.", link: "/services", primary: true },
   { icon: <Layers className="w-6 h-6" />, title: "ERP Solutions", desc: "Custom enterprise resource planning systems built around your business workflows. Operations, inventory, HR, finance unified.", link: "/erp-solutions", primary: true },
   { icon: <Users className="w-6 h-6" />, title: "CRM Solutions", desc: "Intelligent customer relationship management that converts leads, tracks pipelines, and scales revenue.", link: "/crm-solutions", primary: true },
   { icon: <Brain className="w-6 h-6" />, title: "Custom AI Tools", desc: "Practical AI systems assistants, automation, document intelligence built for real business operations.", link: "/ai-solutions", primary: true },
+  { icon: <Search className="w-6 h-6" />, title: "Quality Assurance", desc: "Process-driven QA services ensuring consistency and compliance.", link: "/services" },
+  { icon: <Headphones className="w-6 h-6" />, title: "BPO Services", desc: "Business process outsourcing that ensures operational continuity and efficiency at scale.", link: "/services" },
+
+  // 🔹 EXISTING (reordered, unchanged content)
   { icon: <Globe className="w-6 h-6" />, title: "Web & Mobile Development", desc: "Scalable, high-performance web and mobile applications. From portals to platforms, engineered for growth.", link: "/services" },
   { icon: <Cloud className="w-6 h-6" />, title: "Cloud & DevOps", desc: "Secure cloud infrastructure, CI/CD pipelines, and scalable architecture for enterprise-grade reliability.", link: "/services" },
   { icon: <BarChart3 className="w-6 h-6" />, title: "Consulting", desc: "Strategic technology consulting that aligns digital transformation with business objectives.", link: "/services" },
-  { icon: <Headphones className="w-6 h-6" />, title: "BPO Services", desc: "Business process outsourcing that ensures operational continuity and efficiency at scale.", link: "/services" },
   { icon: <Search className="w-6 h-6" />, title: "Technical SEO", desc: "Advanced technical SEO that drives qualified traffic, improves visibility, and supports lead generation.", link: "/services" },
   { icon: <Palette className="w-6 h-6" />, title: "Media & Creative", desc: "Premium creative services branding, content production, and visual identity for technology companies.", link: "/services" },
 
-  // 🔹 NEW – FULL STACK DELIVERY
+  // 🔹 FULL STACK DELIVERY
   { icon: <Layers className="w-6 h-6" />, title: "Full-Stack Technology Delivery", desc: "End-to-end product engineering from idea to deployment with ultra-fast execution and enterprise quality.", link: "/services", primary: true },
 
   // 🔹 IT SERVICES EXPANSION
   { icon: <Globe className="w-6 h-6" />, title: "API Integrations", desc: "Seamless integrations with third-party platforms, CRMs, payment gateways, and enterprise APIs.", link: "/services" },
-
 
   // 🔹 MEDIA & PRODUCTION EXPANSION
   { icon: <Palette className="w-6 h-6" />, title: "Photo & Video Production", desc: "High-quality cinematic production for branding, digital campaigns, and storytelling.", link: "/services" },
@@ -47,16 +54,14 @@ const services = [
   // 🔹 BPO EXPANSION
   { icon: <Headphones className="w-6 h-6" />, title: "Customer Support", desc: "Global customer support operations with scalable teams.", link: "/services" },
   { icon: <Layers className="w-6 h-6" />, title: "Data Processing", desc: "Accurate and efficient data handling for operations and analytics.", link: "/services" },
-  { icon: <Search className="w-6 h-6" />, title: "Quality Assurance", desc: "Process-driven QA services ensuring consistency and compliance.", link: "/services" },
   { icon: <Users className="w-6 h-6" />, title: "Back Office Operations", desc: "Operational support systems for scaling organizations.", link: "/services" },
 
   // 🔹 SEO EXPANSION
   { icon: <Search className="w-6 h-6" />, title: "Technical Audit", desc: "Detailed SEO audits to uncover performance gaps.", link: "/services" },
-
   { icon: <Layers className="w-6 h-6" />, title: "Schema Markup", desc: "Structured data to enhance search engine visibility.", link: "/services" },
   { icon: <Cloud className="w-6 h-6" />, title: "Performance Optimization", desc: "Speed and performance tuning for better rankings and UX.", link: "/services" },
 
-  // 🔹 CA SERVICES (NEW)
+  // 🔹 CA SERVICES
   { icon: <Users className="w-6 h-6" />, title: "CA Services", desc: "Taxation, compliance, financial advisory, and business consulting services.", link: "/services", primary: true },
 ];
 
