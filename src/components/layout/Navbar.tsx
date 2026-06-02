@@ -15,7 +15,6 @@ const navLinks = [
       { label: "Custom AI Solutions", to: "/ai-solutions" },
     ]
   },
-  { label: "Pricing", to: "/pricing" },
   { label: "Industries", to: "/industries" },
   { label: "Our Process", to: "/our-process" },
   { label: "About", to: "/about" },

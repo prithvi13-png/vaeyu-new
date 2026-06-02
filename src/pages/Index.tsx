@@ -22,23 +22,30 @@ const pillars = [
   {
     icon: <Layers className="w-6 h-6" />,
     title: "ERP Solutions",
-    desc: "Custom enterprise resource planning built around your actual workflows not rigid templates.",
+    desc: "Our flagship custom ERP — operations, inventory, HR, and finance unified around your actual workflows.",
     image: erpVisual,
     link: "/erp-solutions",
   },
   {
     icon: <Users className="w-6 h-6" />,
     title: "CRM Solutions",
-    desc: "Intelligent customer relationship management designed to convert, retain, and grow your revenue.",
+    desc: "Our flagship CRM — convert leads, track pipelines, and grow revenue with software built for your model.",
     image: crmVisual,
     link: "/crm-solutions",
   },
   {
-    icon: <Brain className="w-6 h-6" />,
-    title: "Custom AI Tools",
-    desc: "Practical AI systems that enhance decision-making, automate workflows, and unlock business intelligence.",
+    icon: <Code2 className="w-6 h-6" />,
+    title: "End-to-End IT Services",
+    desc: "One partner for your whole stack — web & mobile apps, custom software, cloud, and AI, idea to launch.",
+    image: heroVisual,
+    link: "/services",
+  },
+  {
+    icon: <Headphones className="w-6 h-6" />,
+    title: "BPO Services",
+    desc: "We provide BPO too — scalable customer support, back-office, and data operations that keep you running.",
     image: aiVisual,
-    link: "/ai-solutions",
+    link: "/services",
   },
 ];
 
@@ -129,7 +136,7 @@ const Index = () => {
                 <span className="text-gradient-brand">full stack of software</span> your business needs
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl mb-10">
-                Vaeyu is an end-to-end IT partner — we build web and mobile apps, custom software, ERP & CRM systems, AI solutions, and provide QA, support, and BPO services. Fixed pricing, direct founder access, and a money-back first milestone.
+                Vaeyu is your end-to-end IT solutions partner — delivering customised ERP and CRM systems built around how your business actually works. Fixed pricing, direct founder access, and a money-back first milestone.
               </p>
               <div className="flex flex-wrap gap-4">
                 {/* TODO: point to a Cal.com booking link once available; for now routes to /contact */}
@@ -139,6 +146,19 @@ const Index = () => {
                 <GradientButton to="/services" variant="outline" size="lg">
                   Explore Solutions
                 </GradientButton>
+              </div>
+
+              {/* Highlighted core offerings */}
+              <div className="flex flex-wrap gap-2.5 mt-8">
+                {["ERP", "CRM", "End-to-End IT", "BPO Services"].map((label) => (
+                  <span
+                    key={label}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-border/50 bg-secondary/30 text-xs font-medium text-muted-foreground"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                    {label}
+                  </span>
+                ))}
               </div>
             </AnimatedSection>
 
@@ -202,14 +222,14 @@ const Index = () => {
       <section className="section-padding">
         <div className="container-premium">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Core Solutions</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">What We Do</p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
-              Three Pillars of <span className="text-gradient-brand">Business Transformation</span>
+              ERP, CRM & <span className="text-gradient-brand">End-to-End IT</span>
             </h2>
-            <p className="text-muted-foreground text-lg">Purpose-built enterprise systems that align with how your business actually operates.</p>
+            <p className="text-muted-foreground text-lg">Our flagship ERP and CRM products, full end-to-end IT services, and BPO support — everything your business needs from one partner.</p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar, i) => (
               <AnimatedSection key={pillar.title} delay={i * 0.15}>
                 <div className="group relative rounded-2xl overflow-hidden border border-border/30 bg-card/30 hover-lift h-full flex flex-col">

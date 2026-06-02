@@ -12,7 +12,6 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import WebAppDevelopment from "./pages/WebAppDevelopment";
 import MobileAppDevelopment from "./pages/MobileAppDevelopment";
-import Pricing from "./pages/Pricing";
 import ERPSolutions from "./pages/ERPSolutions";
 import CRMSolutions from "./pages/CRMSolutions";
 import AISolutions from "./pages/AISolutions";
@@ -49,7 +48,6 @@ export const routes: RouteRecord[] = [
       { path: "services", element: <Services /> },
       { path: "web-app-development", element: <WebAppDevelopment /> },
       { path: "mobile-app-development", element: <MobileAppDevelopment /> },
-      { path: "pricing", element: <Pricing /> },
       { path: "erp-solutions", element: <ERPSolutions /> },
       { path: "crm-solutions", element: <CRMSolutions /> },
       { path: "ai-solutions", element: <AISolutions /> },
