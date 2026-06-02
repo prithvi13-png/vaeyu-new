@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { Outlet } from "react-router-dom";
+import type { RouteRecord } from "vite-react-ssg";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,35 +23,37 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <RouteAnalytics />
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/erp-solutions" element={<ERPSolutions />} />
-              <Route path="/crm-solutions" element={<CRMSolutions />} />
-              <Route path="/ai-solutions" element={<AISolutions />} />
-              <Route path="/industries" element={<Industries />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/our-process" element={<OurProcess />} />
-              {/* <Route path="/blog" element={<Blog />} /> */}
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+const RootLayout = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <ScrollToTop />
+      <RouteAnalytics />
+      <Layout>
+        <Outlet />
+      </Layout>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
-export default App;
+export const routes: RouteRecord[] = [
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Index /> },
+      { path: "services", element: <Services /> },
+      { path: "erp-solutions", element: <ERPSolutions /> },
+      { path: "crm-solutions", element: <CRMSolutions /> },
+      { path: "ai-solutions", element: <AISolutions /> },
+      { path: "industries", element: <Industries /> },
+      { path: "about", element: <About /> },
+      { path: "our-process", element: <OurProcess /> },
+      // { path: "blog", element: <Blog /> },
+      { path: "careers", element: <Careers /> },
+      { path: "contact", element: <Contact /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+];
