@@ -93,8 +93,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <Link to="/contact" className="px-6 py-2.5 text-sm font-semibold bg-gradient-brand rounded-lg text-primary-foreground hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-            Get Free Consultation
+          {/* TODO: point to a Cal.com booking link once available; for now routes to /contact */}
+          <Link
+            to="/contact"
+            className="px-6 py-2.5 text-sm font-semibold bg-gradient-brand rounded-lg text-primary-foreground hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+          >
+            Book a Free Consultation
           </Link>
         </div>
 
@@ -134,8 +138,12 @@ const Navbar = () => {
                   ))}
                 </div>
               ))}
-              <Link to="/contact" className="mt-3 px-6 py-3 text-sm font-semibold bg-gradient-brand rounded-lg text-primary-foreground text-center">
-                Get Free Consultation
+              {/* TODO: point to a Cal.com booking link once available; for now routes to /contact */}
+              <Link
+                to="/contact"
+                className="mt-3 px-6 py-3 text-sm font-semibold bg-gradient-brand rounded-lg text-primary-foreground text-center"
+              >
+                Book a Free Consultation
               </Link>
             </div>
           </motion.div>

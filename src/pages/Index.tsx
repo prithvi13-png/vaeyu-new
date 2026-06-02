@@ -108,15 +108,16 @@ const Index = () => {
                 <span className="text-xs font-medium text-muted-foreground">2x Faster Than Traditional Agencies</span>
               </div>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight mb-6">
-                We build digital products that{" "}
-                <span className="text-gradient-brand">grow your business</span>
+                Custom ERP, CRM & AI software,{" "}
+                <span className="text-gradient-brand">delivered in weeks not months</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl mb-10">
-                Vaeyu Innovations delivers custom software, web & mobile solutions for startups and growing businesses.
+                Vaeyu Innovations builds enterprise software around how your business actually works — for startups and growing businesses that need to move fast.
               </p>
               <div className="flex flex-wrap gap-4">
-                <GradientButton to="#lead-capture" size="lg">
-                  Get a free strategy call <ArrowRight className="w-4 h-4" />
+                {/* TODO: point to a Cal.com booking link once available; for now routes to /contact */}
+                <GradientButton to="/contact" size="lg">
+                  Book a Free Consultation <ArrowRight className="w-4 h-4" />
                 </GradientButton>
                 <GradientButton to="/services" variant="outline" size="lg">
                   Explore Solutions

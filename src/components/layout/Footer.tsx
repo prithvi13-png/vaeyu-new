@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import vaeyuLogo from "@/assets/vaeyu-logo.png";
+import { ArrowRight } from "lucide-react";
 
 const footerLinks = {
   Solutions: [
@@ -35,7 +36,21 @@ const Footer = () => (
           <div className="space-y-2 text-sm text-muted-foreground">
             <p>info@vaeyuinnovations.com</p>
             <p>+91 7204873132</p>
-            <p className="leading-relaxed">Pro Works, Om Chambers, 648/A, 4th Floor,<br />Binnamangala, 1st Stage, Indiranagar,<br />Bangalore - 560038</p>
+            <p className="leading-relaxed">Pro Works, Om Chambers, 648/A, 4th Floor,<br />Binnamangala, 1st Stage, Indiranagar,<br />Bangalore - 560038, India</p>
+          </div>
+
+          {/* Contact CTA */}
+          <div className="mt-8">
+            {/* TODO: point to a Cal.com booking link once available; for now routes to /contact */}
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-gradient-brand rounded-lg text-primary-foreground hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+            >
+              Book a Free Consultation <ArrowRight className="w-4 h-4" />
+            </Link>
+            <p className="text-xs text-muted-foreground mt-3">
+              Prefer email? <Link to="/contact" className="text-primary hover:underline">Contact us</Link> and we'll respond within 24 hours.
+            </p>
           </div>
         </div>
 

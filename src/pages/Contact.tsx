@@ -1,41 +1,16 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { useToast } from "@/hooks/use-toast";
 import { submitLead } from "@/lib/leadCapture";
 import { trackEvent } from "@/lib/analytics";
 import { leadInterestOptions } from "@/lib/validationSchemas";
-import { Mail, Phone, MapPin, Send, CalendarDays } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 
-const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL?.trim();
-
-const CalendlyEmbed = ({ url }: { url: string }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const existing = document.querySelector('script[src*="calendly"]');
-    if (!existing) {
-      const script = document.createElement("script");
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="calendly-inline-widget w-full rounded-2xl overflow-hidden border border-border/30"
-      data-url={`${url}?hide_gdpr_banner=1`}
-      style={{ minHeight: 700 }}
-    />
-  );
-};
+// NOTE: No Cal.com booking link yet, so there is no calendar embed / booking tab.
+// When a real Cal.com link exists, add the embed (or a "Book a Call" CTA / tab) here.
 
 const Contact = () => {
-  const [activeTab, setActiveTab] = useState<"message" | "book">("message");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -125,41 +100,8 @@ const Contact = () => {
             </p>
           </AnimatedSection>
 
-          {/* Tab switcher */}
-          <div className="flex justify-center mb-10">
-            <div className="inline-flex rounded-xl border border-border/40 bg-secondary/20 p-1 gap-1">
-              <button
-                onClick={() => {
-                  setActiveTab("message");
-                  trackEvent("click_cta", { cta_name: "contact_tab_message" });
-                }}
-                className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                  activeTab === "message"
-                    ? "bg-gradient-brand text-primary-foreground shadow"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                Send a Message
-              </button>
-              <button
-                onClick={() => {
-                  setActiveTab("book");
-                  trackEvent("click_cta", { cta_name: "contact_tab_book_call" });
-                }}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                  activeTab === "book"
-                    ? "bg-gradient-brand text-primary-foreground shadow"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                <CalendarDays className="w-4 h-4" />
-                Book a Call
-              </button>
-            </div>
-          </div>
-
-          {activeTab === "message" ? (
-            <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+          {/* Contact form (default and only view — booking tab removed until a Cal.com link exists) */}
+          <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
               <AnimatedSection className="lg:col-span-3">
                 {submitted ? (
                   <div className="rounded-2xl border border-primary/20 bg-gradient-brand-subtle p-12 text-center">
@@ -294,48 +236,18 @@ const Contact = () => {
                 <div className="rounded-2xl border border-primary/20 bg-gradient-brand-subtle p-7">
                   <h3 className="font-heading font-bold mb-3">Prefer a live conversation?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Switch to the "Book a Call" tab to schedule a free 30-minute strategy session directly on our calendar — no back-and-forth emails.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setActiveTab("book");
-                      trackEvent("click_cta", { cta_name: "contact_sidebar_book_call" });
-                    }}
-                    className="text-sm font-semibold text-primary hover:underline flex items-center gap-1"
-                  >
-                    <CalendarDays className="w-4 h-4" /> Book a call instead
-                  </button>
-                </div>
-              </AnimatedSection>
-            </div>
-          ) : (
-            <AnimatedSection className="max-w-4xl mx-auto">
-              {CALENDLY_URL ? (
-                <CalendlyEmbed url={CALENDLY_URL} />
-              ) : (
-                <div className="rounded-2xl border border-border/30 bg-card/30 p-12 text-center max-w-lg mx-auto">
-                  <div className="w-14 h-14 rounded-full bg-gradient-brand-subtle flex items-center justify-center mx-auto mb-5">
-                    <CalendarDays className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="font-heading text-xl font-bold mb-3">Book a Strategy Call</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Email us to schedule a free 30-minute strategy session. We typically confirm within a few hours.
+                    Call or email us directly and we'll set up a free 30-minute strategy session at a time that works for you.
                   </p>
                   <a
-                    href="mailto:info@vaeyuinnovations.com?subject=Book a Strategy Call"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-brand rounded-xl text-sm font-semibold text-primary-foreground hover:scale-[1.02] transition-all duration-300"
-                    onClick={() => trackEvent("click_cta", { cta_name: "contact_book_via_email" })}
+                    href="tel:+917204873132"
+                    onClick={() => trackEvent("click_cta", { cta_name: "contact_sidebar_call" })}
+                    className="text-sm font-semibold text-primary hover:underline flex items-center gap-1"
                   >
-                    <Mail className="w-4 h-4" />
-                    Email to book
+                    <Phone className="w-4 h-4" /> +91 7204873132
                   </a>
-                  <p className="text-[11px] text-muted-foreground/60 mt-4">
-                    Or call +91 7204873132 to book directly.
-                  </p>
                 </div>
-              )}
-            </AnimatedSection>
-          )}
+              </AnimatedSection>
+          </div>
         </div>
       </section>
     </>
