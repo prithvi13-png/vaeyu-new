@@ -8,11 +8,14 @@ const navLinks = [
   {
     label: "Solutions", to: "/services", children: [
       { label: "All Services", to: "/services" },
+      { label: "Web App Development", to: "/web-app-development" },
+      { label: "Mobile App Development", to: "/mobile-app-development" },
       { label: "ERP Solutions", to: "/erp-solutions" },
       { label: "CRM Solutions", to: "/crm-solutions" },
       { label: "Custom AI Solutions", to: "/ai-solutions" },
     ]
   },
+  { label: "Pricing", to: "/pricing" },
   { label: "Industries", to: "/industries" },
   { label: "Our Process", to: "/our-process" },
   { label: "About", to: "/about" },

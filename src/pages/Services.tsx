@@ -17,8 +17,8 @@ const services = [
   // 🔹 LEAD SERVICES — app development first, then the rest of the stack.
   // Web App Development, Mobile App Development, and Custom Software added here;
   // ERP / CRM / AI / QA / BPO reordered up. No existing service removed.
-  { icon: <Globe className="w-6 h-6" />, title: "Web App Development", desc: "Scalable, high-performance web applications and portals. From dashboards to platforms, engineered for growth.", link: "/services", primary: true },
-  { icon: <Smartphone className="w-6 h-6" />, title: "Mobile App Development", desc: "Native and cross-platform mobile apps with polished UX, built to scale across iOS and Android.", link: "/services", primary: true },
+  { icon: <Globe className="w-6 h-6" />, title: "Web App Development", desc: "Scalable, high-performance web applications and portals. From dashboards to platforms, engineered for growth.", link: "/web-app-development", primary: true },
+  { icon: <Smartphone className="w-6 h-6" />, title: "Mobile App Development", desc: "Native and cross-platform mobile apps with polished UX, built to scale across iOS and Android.", link: "/mobile-app-development", primary: true },
   { icon: <Code2 className="w-6 h-6" />, title: "Custom Software", desc: "Bespoke software engineered around your exact workflows, integrations, and business goals.", link: "/services", primary: true },
   { icon: <Layers className="w-6 h-6" />, title: "ERP Solutions", desc: "Custom enterprise resource planning systems built around your business workflows. Operations, inventory, HR, finance unified.", link: "/erp-solutions", primary: true },
   { icon: <Users className="w-6 h-6" />, title: "CRM Solutions", desc: "Intelligent customer relationship management that converts leads, tracks pipelines, and scales revenue.", link: "/crm-solutions", primary: true },

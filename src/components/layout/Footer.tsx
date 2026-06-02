@@ -4,6 +4,8 @@ import { ArrowRight } from "lucide-react";
 
 const footerLinks = {
   Solutions: [
+    { label: "Web App Development", to: "/web-app-development" },
+    { label: "Mobile App Development", to: "/mobile-app-development" },
     { label: "ERP Solutions", to: "/erp-solutions" },
     { label: "CRM Solutions", to: "/crm-solutions" },
     { label: "Custom AI Tools", to: "/ai-solutions" },
@@ -12,6 +14,7 @@ const footerLinks = {
   Company: [
     { label: "About Us", to: "/about" },
     { label: "Our Process", to: "/our-process" },
+    { label: "Pricing", to: "/pricing" },
     { label: "Careers", to: "/careers" },
   ],
   Resources: [
