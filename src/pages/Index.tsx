@@ -150,7 +150,7 @@ const Index = () => {
 
               {/* Highlighted core offerings */}
               <div className="flex flex-wrap gap-2.5 mt-8">
-                {["ERP", "CRM", "End-to-End IT", "BPO Services"].map((label) => (
+                {["ERP", "CRM", "AI Solutions", "End-to-End IT", "BPO Services"].map((label) => (
                   <span
                     key={label}
                     className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-border/50 bg-secondary/30 text-xs font-medium text-muted-foreground"
