@@ -5,6 +5,38 @@ interface LeadSubmitOptions {
   subject: string;
 }
 
+const sendToEnquiryTracker = (payload: LeadPayload): void => {
+  const token = import.meta.env.VITE_ENQUIRY_TOKEN?.trim();
+  if (!token) return;
+
+  const body = {
+    full_name: payload.name ?? "",
+    email: payload.email,
+    phone: payload.phone,
+    message: payload.message,
+    page_url: window.location.href,
+  };
+
+  const post = () =>
+    fetch("https://vaeyu-lead-tracker-api.onrender.com/api/public/enquiries/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Enquiry-Token": token,
+      },
+      body: JSON.stringify(body),
+    });
+
+  post().catch(() => {
+    // Render free tier cold start — retry once after 10 seconds
+    setTimeout(() => {
+      post().catch((err) => {
+        console.error("[EnquiryTracker] Failed to send lead:", err);
+      });
+    }, 10000);
+  });
+};
+
 export const submitLead = async (
   payload: LeadPayload,
   options: LeadSubmitOptions,
@@ -41,6 +73,8 @@ export const submitLead = async (
   if (!response.ok) {
     throw new Error("Lead submission failed");
   }
+
+  sendToEnquiryTracker(payload);
 
   return response;
 };
