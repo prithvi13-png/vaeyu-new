@@ -58,34 +58,6 @@ const Careers = () => (
           <p className="text-muted-foreground text-lg">Join a team that builds premium enterprise software for real businesses. Speed, quality, and impact every project.</p>
         </AnimatedSection>
 
-        {/* Open Roles */}
-        <div className="max-w-3xl mx-auto space-y-4">
-          {openings.map((job, i) => (
-            <AnimatedSection key={job.title} delay={i * 0.1}>
-              <div className="rounded-xl border border-border/30 bg-card/30 p-6 hover-lift group">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-brand-subtle flex items-center justify-center text-primary flex-shrink-0">{job.icon}</div>
-                    <div>
-                      <h3 className="font-heading font-bold mb-1">{job.title}</h3>
-                      <p className="text-xs text-muted-foreground mb-2">{job.type} · {job.location}</p>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{job.desc}</p>
-                    </div>
-                  </div>
-                  <GradientButton to="/contact" variant="outline" size="sm" className="flex-shrink-0 self-start sm:self-center">
-                    Apply <ArrowRight className="w-3.5 h-3.5" />
-                  </GradientButton>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
-
-        <AnimatedSection delay={0.3} className="text-center mt-12 mb-24">
-          <p className="text-muted-foreground text-sm">Don't see your role? We're always looking for exceptional talent.</p>
-          <p className="text-sm mt-2">Send your resume to <a href="mailto:info@vaeyuinnovations.com" className="text-primary hover:underline">info@vaeyuinnovations.com</a></p>
-        </AnimatedSection>
-
         {/* Internship Section */}
         <AnimatedSection className="mb-24">
           <div className="rounded-2xl border border-primary/20 bg-gradient-brand-subtle overflow-hidden">
@@ -99,7 +71,7 @@ const Careers = () => (
                   Kickstart your career with Vaeyu Innovations. Our internship program provides hands-on experience on real-world projects under the guidance of experienced mentors. Interns work with modern technologies, collaborate with our engineering teams, and gain practical industry exposure.
                 </p>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScdzYCE-xIKq8q7O7N3_p9l5HObWJFTdtJf_EsSmjqgkWzz_g/viewform?usp=header"
+                  href="https://forms.gle/RQW46S16ghzJsHPr9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold bg-gradient-brand rounded-xl text-primary-foreground hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
@@ -121,6 +93,34 @@ const Careers = () => (
               </div>
             </div>
           </div>
+        </AnimatedSection>
+
+        {/* Open Roles */}
+        <div className="max-w-3xl mx-auto space-y-4 mb-24">
+          {openings.map((job, i) => (
+            <AnimatedSection key={job.title} delay={i * 0.1}>
+              <div className="rounded-xl border border-border/30 bg-card/30 p-6 hover-lift group">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-brand-subtle flex items-center justify-center text-primary flex-shrink-0">{job.icon}</div>
+                    <div>
+                      <h3 className="font-heading font-bold mb-1">{job.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-2">{job.type} · {job.location}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{job.desc}</p>
+                    </div>
+                  </div>
+                  <GradientButton to="/contact" variant="outline" size="sm">
+                    Apply <ArrowRight className="w-3.5 h-3.5" />
+                  </GradientButton>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection delay={0.3} className="text-center mb-24">
+          <p className="text-muted-foreground text-sm">Don't see your role? We're always looking for exceptional talent.</p>
+          <p className="text-sm mt-2">Send your resume to <a href="mailto:info@vaeyuinnovations.com" className="text-primary hover:underline">info@vaeyuinnovations.com</a></p>
         </AnimatedSection>
 
         {/* Locations */}
